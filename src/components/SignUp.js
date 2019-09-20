@@ -6,12 +6,17 @@ class SignUp extends React.Component {
     password: ""
   };
 
-  submitRegister = () => {
-    const { email, password, rememberMe } = this.state;
-    if (rememberMe) {
-      window.localStorage.setItem("user", email);
-      window.localStorage.setItem("password", password);
-    }
+  submitRegister = e => {
+    const input = e.target;
+    const value = input.value;
+
+    this.setState({ [input.name]: value });
+  };
+
+  handleFormSubmit = () => {
+    const { user, password } = this.state;
+    window.localStorage.setItem("user", user);
+    window.localStorage.setItem("password", password);
   };
 
   render() {
@@ -23,6 +28,8 @@ class SignUp extends React.Component {
             <label htmlFor="email">Email</label>
             <input
               type="text"
+              value={this.state.user}
+              onChange={this.submitRegister}
               name="email"
               className="login-input"
               placeholder="Email"
@@ -33,7 +40,9 @@ class SignUp extends React.Component {
             <label htmlFor="password">Password</label>
             <input
               type="password"
+              value={this.state.password}
               name="password"
+              onChange={this.submitRegister}
               className="login-input"
               placeholder="Password"
             />
@@ -41,7 +50,7 @@ class SignUp extends React.Component {
           <button
             type="button"
             className="login-btn"
-            onClick={this.submitRegister}
+            onClick={this.handleFormSubmit}
           >
             Register
           </button>

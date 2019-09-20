@@ -1,7 +1,7 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import Box from "./Box";
+import Login from "./Login";
 import history from "../history";
 
 class App extends React.Component {
@@ -11,7 +11,7 @@ class App extends React.Component {
         <Router history={history}>
           <div>
             <Switch>
-              <Route path="/" exact component={Box} />
+              <Route path="/" exact component={Login} />
               <Route path="/Search" exact component={SearchBar} />
             </Switch>
           </div>
