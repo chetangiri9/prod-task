@@ -95,14 +95,20 @@
   color: white;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 320px) {
+  .inner-container {
+    min-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
   .inner-container {
     max-width: 70%;
   }
 }
 
-@media (min-width: 720px) {
+@media (max-width: 720px) {
   .inner-container {
-    max-width: 30%;
+    max-width: 50%;
   }
 }
