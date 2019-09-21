@@ -1,0 +1,14 @@
+.icon__favorite {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+}
+
+.icon__favorite.true {
+  color: yellow;
+}
+
+.icon__favorite.false {
+  color: white;
+}
